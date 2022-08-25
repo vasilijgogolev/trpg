@@ -23,6 +23,7 @@ add_subdirectory(modules)
 
 target_link_libraries(${PROJECT_NAME} 
 	PUBLIC 
+		"-framework OpenGL"
 		glfw
 		imgui
 )
