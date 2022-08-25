@@ -17,8 +17,11 @@
 #pragma comment(lib, "legacy_stdio_definitions")
 #endif
 
+#include "game.h"
+
 GLFWwindow* window = nullptr;
 bool windowOpen = true;
+std::shared_ptr<game> myGame = std::make_shared<game>();
 
 static void glfw_error_callback(int error, const char* description)
 {
@@ -73,7 +76,7 @@ int main(int, char**)
 			ImGui::SetNextWindowSize(ImVec2(io.DisplaySize.x, io.DisplaySize.y), ImGuiCond_Once);
 			ImGui::Begin("trpg", &windowOpen, ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoNav | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoTitleBar);
 			if (ImGui::BeginTabBar("MyTabBar")) {
-				
+				myGame->draw();
 				ImGui::EndTabBar();
 			}
 			
