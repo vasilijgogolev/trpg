@@ -1,7 +1,7 @@
 #pragma once
 #include <memory>
-#include "save.h"
-#include "renderer.h"
+#include "saveController.h"
+#include "imguiRenderer.h"
 
 class game {
 public:
@@ -12,7 +12,7 @@ public:
 	void initialize();
 	void terminate();
 private:
-	std::shared_ptr<save> mySaveFile;
-	std::shared_ptr<renderer> myRenderer;
+	std::shared_ptr<saveController> mySaveFile;
+	std::shared_ptr<imguiRenderer> myRenderer;
 	bool initialized = false;
 };

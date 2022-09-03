@@ -1,11 +1,11 @@
-#include "renderer.h"
+#include "imguiRenderer.h"
 #include <imgui.h>
 
-void renderer::initialize() {
+void imguiRenderer::initialize() {
 	
 }
 
-void renderer::draw() {
+void imguiRenderer::draw() {
 	if (ImGui::BeginTabItem("GAME TAB")) {
 		
 		ImGui::Text("This is game tab");

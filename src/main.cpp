@@ -17,7 +17,7 @@
 #pragma comment(lib, "legacy_stdio_definitions")
 #endif
 
-#include "game.h"
+#include "gameController.h"
 
 GLFWwindow* window = nullptr;
 bool windowOpen = true;

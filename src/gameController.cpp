@@ -1,14 +1,15 @@
-#include "game.h"
+#include "gameController.h"
+#include "messagesHistory.h"
 
 void game::initialize() {
 	if (initialized) {
 		return;
 	}
 	
-	mySaveFile = std::make_shared<save>();
+	mySaveFile = std::make_shared<saveController>();
 	mySaveFile->initialize();
 	
-	myRenderer = std::make_shared<renderer>();
+	myRenderer = std::make_shared<imguiRenderer>();
 	
 	initialized = true;
 }
@@ -22,5 +23,5 @@ void game::draw() {
 }
 
 void game::terminate() {
-	
+	messagesHistory::cleanup();
 }
